@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 1 - Sesión 29</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <h1>Video - Implementación html5</h1>
+    <video id="video1" width="300" height="200" autoplay="autoplay" controls loop="loop">
+        <source src="video/peligroso.mp4" type="video/mp4"> 
+        <source src="video/peligroso.ogg"  type="video/ogg"> 
+        <source src="video/peligroso.webm"  type="video/webm"> 
+            Tu navegador no soporta esta etiqueta HTML5 
+    </video>
+    <div> 
+        <button onclick="document.getElementById('video1').play()">Reproducir el Vídeo</button> 
+        <button onclick="document.getElementById('video1').pause()">Pausar el Vídeo</button> 
+        <button onclick="document.getElementById('video1').volume+=0.1">Aumentar el Volumen del Vídeo</button>
+        <button onclick="document.getElementById('video1').volume-=0.1">Disminuir el Volumen del Vídeo</button> 
+    </div>
+</body>
+            
+</html>

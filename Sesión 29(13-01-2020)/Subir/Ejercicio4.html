@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 4 - Sesión 29</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <h1>Ejercicio 4 - Sesión 29</h1>
+    <form name="formulario1" id="form1"> 
+        <fieldset> 
+            <legend>Datos de geolocalización</legend> 
+            <label id="etiquetaLatitud" for="campoLatitud">Latitud:</label> 
+            <input name="clatitud" id="campoLatitud" type="text"> 
+            <br> 
+            <label id="etiquetaLongitud" for="campoLongitud">Longitud:</label> 
+            <input name="clongitud" id="campoLongitud" type="text"> </fieldset> 
+            </form> 
+            <br>
+            <button onclick="obtenerLocalizacion('campoLatitud','campoLongitud')">Obtener localización AHORITA</button> 
+            
+        <script> 
+        function obtenerLocalizacion(idlati, idlong) { 
+            elementoLat = document.getElementById(idlati); 
+            elementoLong = document.getElementById(idlong); 
+            if (navigator.geolocation) { 
+                navigator.geolocation.getCurrentPosition(mostrarPosicion);
+                /*Pasamos como parámetro del nombre de la función a la que llamaremos cuando se obtenga la posición*/ 
+            } 
+            else { 
+                elementoLat.innerHTML = "Tu navegador no soporta geolocalización"; 
+                elementoLong.innerHTML = "Tu navegador no soporta geolocalización";
+            } 
+        } 
+        
+        function mostrarPosicion(posicion) { 
+            elementoLat.value = posicion.coords.latitude; 
+            elementoLong.value = posicion.coords.longitude; 
+        } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 2 - Sesión 29</title>
+    <link rel="stylesheet" href="style2.css">
+    
+   
+</head>
+<body>
+    <h1>Ejercicio 2 - Sesión 29</h1>
+    <h2>Canvas</h2>
+    
+    <canvas id="canvas1" class="claseCanvas1" width="300" height="200">
+        
+    </canvas>
+
+    <img id="salva1" src="imagen/salva.png" alt="Imagen coloreable para Salva" 
+     title="Píntame!" class="imagen1">
+
+    <script>
+    function dibujarLinea() {
+        var canvasvar1 = document.getElementById("canvas1"); 
+        var contexto1 = canvasvar1.getContext("2d"); 
+        contexto1.moveTo(0, 0); 
+        contexto1.lineTo(150, 100);
+        contexto1.lineTo(300, 0);
+        /*Eje x eje y*/ 
+        contexto1.stroke();
+    }
+
+    function escribirTexto() {
+        var canvasvar1 = document.getElementById("canvas1"); 
+        var contexto1 = canvasvar1.getContext("2d"); 
+        contexto1.font = "20px Arial"; 
+        contexto1.fillText("Hola a la clase de DIW", 40, 105);
+        /*x, y*/
+    }
+
+    function dibujarCircunferencia() {
+        var canvasvar1 = document.getElementById("canvas1"); 
+        var contexto1 = canvasvar1.getContext("2d"); contexto1.beginPath(); 
+        contexto1.arc(150, 105, 40, 0,2 * Math.PI);
+        /*Eje x, eje y, radio, inicio de la circunferencia (0) y final de la 
+        circunferencia(2*PI) (2*Math.PI*R es la longitud completa de la circunferencia*/ 
+        contexto1.stroke();
+    }
+    function dibujarImagen() {
+        var canvasvar1 = document.getElementById("canvas1"); 
+        var contexto1 = canvasvar1.getContext("2d"); 
+        var imagen1 = document.getElementById("salva1"); 
+        contexto1.drawImage(imagen1, 5, 5); 
+        /*eje x, eje y*/
+    }
+    </script>
+    <br>
+    <button onclick="dibujarLinea()">Dibujar imagen</button>
+    <button onclick="escribirTexto()">Escribe ya!</button>
+    <button onclick="dibujarCircunferencia()">Circunferencia ya!</button>
+    <button onclick="dibujarImagen()">Dibújame ya!</button>
+</body>
+</html>
