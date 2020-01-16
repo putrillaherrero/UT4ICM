@@ -1,0 +1,79 @@
+@charset "UTF-8";
+.contenedorGridCentradoPerfecto, .contenedorGridJustifyContent, .contenedorGridItemRows, .contenedorGridItemColumns, .contenedorGridColumn, .contenedorGridLinea, .contenedorGrid {
+  grid-template-columns: auto auto auto;
+  background-color: royalblue;
+  padding: 10px;
+  column-gap: 20px;
+  /*Espacio entre columnas*/
+  row-gap: 20px;
+  /*Espacio entre filas o tuplas*/
+}
+
+.contenedorGridCentradoPerfecto__hijoGrid, .contenedorGridJustifyContent__hijoGrid, .contenedorGridItemRows__hijoGrid, .contenedorGridItemColumns__hijoGrid, .contenedorGridColumn__hijo7, .contenedorGridColumn__hijo2, .contenedorGridColumn__hijoGrid, .contenedorGridLinea__hijoGrid, .contenedorGrid__hijoGrid {
+  background-color: salmon;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.contenedorGrid {
+  display: grid;
+  /*Se muestra como bloque*/
+}
+.contenedorGridLinea {
+  display: inline-grid;
+  /*Se muestra en línea*/
+}
+.contenedorGridColumn {
+  display: grid;
+  column-gap: 20px;
+  /*Espacio entre columnas*/
+  row-gap: 20px;
+  /*Espacio entre filas o tuplas*/
+}
+.contenedorGridColumn__hijo2 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.contenedorGridColumn__hijo7 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.contenedorGridItemColumns {
+  display: grid;
+  /*Se muestra como bloque*/
+  /*grid-template-columns: 20% 20% 20% 20% 20%;*/
+  grid-template-columns: repeat(5, 20%);
+  gap: 0;
+  /*propiedad resumen de column y*/
+  /*column-gap: 0;
+  row-gap: 0;*/
+}
+.contenedorGridItemRows {
+  display: grid;
+  /*Se muestra como bloque*/
+  /*grid-template-columns: 20% 20% 20% 20% 20%;*/
+  grid-template-columns: repeat(5, 20%);
+  gap: 0;
+  /*propiedad resumen de column y*/
+  /*column-gap: 0;
+  row-gap: 0;*/
+  grid-template-rows: 200px 300px;
+}
+.contenedorGridJustifyContent {
+  display: grid;
+  justify-content: end;
+}
+.contenedorGridCentradoPerfecto {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-top: 30px;
+  min-height: 450px;
+}
+
+/*# sourceMappingURL=style2.css.map */

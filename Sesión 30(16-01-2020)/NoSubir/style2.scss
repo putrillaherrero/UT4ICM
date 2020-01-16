@@ -1,0 +1,109 @@
+%contenedor {
+    grid-template-columns: auto auto auto;
+    background-color: royalblue;
+    padding: 10px;
+    column-gap: 20px;/*Espacio entre columnas*/
+    row-gap: 20px;/*Espacio entre filas o tuplas*/
+}
+
+%hijo {
+    background-color: salmon;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.contenedorGrid {
+    display: grid; /*Se muestra como bloque*/
+    @extend %contenedor;
+    &__hijoGrid {
+        @extend %hijo;
+    }
+}
+
+.contenedorGridLinea {
+    display: inline-grid; /*Se muestra en línea*/
+    @extend %contenedor;
+    &__hijoGrid {
+        @extend %hijo;
+    }
+}
+
+.contenedorGridColumn {
+    display: grid;
+    column-gap: 20px;/*Espacio entre columnas*/
+    row-gap: 20px;/*Espacio entre filas o tuplas*/
+    @extend %contenedor;
+    &__hijoGrid {
+        @extend %hijo;
+    }
+    &__hijo2 {
+        @extend %hijo;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    &__hijo7 {
+        @extend %hijo;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+.contenedorGridItemColumns {
+    display: grid; /*Se muestra como bloque*/
+    /*grid-template-columns: 20% 20% 20% 20% 20%;*/
+    grid-template-columns: repeat(5, 20%);
+    gap: 0; /*propiedad resumen de column y*/
+    /*column-gap: 0;
+    row-gap: 0;*/
+    @extend %contenedor;
+    &__hijoGrid {
+        @extend %hijo;
+    }
+}
+
+.contenedorGridItemRows {
+    display: grid; /*Se muestra como bloque*/
+    /*grid-template-columns: 20% 20% 20% 20% 20%;*/
+    grid-template-columns: repeat(5, 20%);
+    gap: 0; /*propiedad resumen de column y*/
+    /*column-gap: 0;
+    row-gap: 0;*/
+    grid-template-rows: 200px 300px;
+    @extend %contenedor;
+    &__hijoGrid {
+        @extend %hijo;
+    }
+}
+
+.contenedorGridJustifyContent {
+    display: grid;
+    justify-content: end;
+    @extend %contenedor;
+    &__hijoGrid {
+        @extend %hijo;
+    }
+}
+
+@mixin justifycontent($valor) {
+    justify-content: $valor;
+}
+
+@mixin  aligncontent($valor) {
+    align-content: $valor;
+}
+
+.contenedorGridCentradoPerfecto {
+    display: grid;
+    @extend %contenedor;
+    @include justifycontent(center);
+    @include aligncontent(center);
+    margin-top: 30px;
+    min-height: 450px;
+    &__hijoGrid {
+        @extend %hijo;
+    }
+}
