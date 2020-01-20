@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style1.css">
+    <title>Ejercicio 1 - Sesión 28</title>
+</head>
+
+<body>
+    <h1>Ejercicio 1 - Sesión 28</h1>
+    <h2>Figure y figcaption</h2>
+    <figure>
+        <img class="imagen1" src="img/tigre.jfif" alt="Un tigre blanco haciendo cosas de tigre blanco."
+            title="Tigre blanco en China">
+        <figcaption>Cosas del pie de página</figcaption>
+    </figure>
+
+    <h2>Picture</h2>
+    <picture>
+        <source media="(min-width: 850px)" srcset="./img/imagen1.jfif">
+        <source media="(min-width: 565px)" srcset="./img/imagen2.jfif">
+        <img src="./img/imagen3.jfif" alt="Imagen retrocompatible" style="width:auto;">
+    </picture>
+
+    <h2>Audio</h2>
+    <audio id="audio1" controls>
+        <source src="audio/Idina Menzel, AURORA - Into the Unknown (From Frozen 2).mp3" type="audio/mpeg">
+        <source src="audio/Idina Menzel, AURORA - Into the Unknown (From Frozen 2).ogg" type="audio/ogg">
+        <source src="audio/Idina Menzel, AURORA - Into the Unknown (From Frozen 2).wav" type="audio/wav">
+        Tu navegador no soporta esta etiqueta HTML5
+    </audio>
+
+    <h2>API de HTML5 dedicada al audio</h2>
+    <div>
+        <button onclick="document.getElementById('audio1').play()">Reproducir el Audio</button> 
+        <button onclick="document.getElementById('audio1').pause()">Pausar el Audio</button> 
+        <button onclick="document.getElementById('audio1').volume+=0.1">Aumentar el Volumen</button> 
+        <button onclick="document.getElementById('audio1').volume-=0.1">Disminuir el Volumen</button> 
+    </div>
+</body> 
+
+</html>

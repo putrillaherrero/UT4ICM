@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 2 - Sesión 31</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <h1>Ejercicio 2 - Sesión 31</h1>
+    <h2>Imágenes responsivas</h2>
+    <div class="contenedorGrid">
+        <div class="contenedorGrid__elementoHijo">
+            <img src="img/playa.jfif" class="contenedorGrid__elementoHijo__imgResponsiva">
+        </div>
+        <div class="contenedorGrid__elementoHijo">
+            <img src="img/montaña.jfif" class="contenedorGrid__elementoHijo__imgResponsiva">
+        </div>
+    </div>
+
+    <h2>Imagen responsiva centrada</h2>
+    <img src="img/felinos.jfif" class="imagenResponsivaCentrada">
+
+    <h2>Background imagen</h2>
+    <img class="contenedorImagen">
+
+    <h2>Object-fit: scale-down y cover</h2>
+    <div style="width:100%; height:400px; margin-top: 50px;"> 
+        <img src="img/lobo1.jfif" alt="Imagen1" style="float:left; width:50%; height:100%; object-fit: scale-down;">        
+        <img src="img/lobo2.jfif" alt="Imagen2" style="float:left; width:50%; height:100%; object-fit: cover;"> 
+    </div>
+
+</body>
+
+</html>
